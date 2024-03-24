@@ -1,0 +1,25 @@
+﻿@using MaximaTech.api.Models
+@model Produtos
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<h2>Detalhes do Produto</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <dl class="row">
+            <dt class="col-sm-4">Código:</dt>
+            <dd class="col-sm-8">@Model.Codigo</dd>
+            <dt class="col-sm-4">Descrição:</dt>
+            <dd class="col-sm-8">@Model.Descricao</dd>
+            <dt class="col-sm-4">Preço:</dt>
+            <dd class="col-sm-8">@Model.Preco.ToString("C")</dd>
+            <dt class="col-sm-4">Status:</dt>
+            <dd class="col-sm-8">@Model.Status</dd>
+        </dl>
+    </div>
+</div>
+
+<a asp-action="Index" class="btn btn-secondary">Voltar para Lista</a>

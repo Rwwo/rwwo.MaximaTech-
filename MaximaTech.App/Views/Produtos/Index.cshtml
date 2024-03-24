@@ -1,0 +1,39 @@
+﻿@model IEnumerable<MaximaTech.api.Models.Produtos>
+
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<h2>Lista de Produtos</h2>
+
+<a asp-action="Create" class="btn btn-primary">Novo Produto</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Código</th>
+            <th>Descrição</th>
+            <th>Preço</th>
+            <th>Status</th>
+            <th>Departamento</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var produto in Model)
+        {
+            <tr>
+                <td>@produto.Codigo</td>
+                <td>@produto.Descricao</td>
+                <td>@produto.Preco.ToString("C")</td>
+                <td>@(produto.Status ? "Ativo" : "Inativo")</td>
+                <td>@produto.Departamento?.Descricao</td>
+                <td>
+                    <form asp-action="Details" asp-route-id="@produto.Id" method="get">
+                        <button type="submit" class="btn btn-secondary">Detalhes</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

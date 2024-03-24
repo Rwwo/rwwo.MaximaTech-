@@ -1,0 +1,25 @@
+Dados do Usuário
+{
+  "email": "r@r.com",
+  "password": "ab123456789AB*",
+  "confirmPassword": "ab123456789AB*"
+}
+
+{
+  "email": "r@r.com",
+  "password": "ab123456789AB*"
+}
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJAci5jb20iLCJuYmYiOjE3MTEyOTAxODcsImV4cCI6MTcxMTMzMzM4NywiaWF0IjoxNzExMjkwMTg3LCJpc3MiOiJNZXVTaXN0ZW1hIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3QifQ.udmz42DkDcOdexHb6Gunoaj2qpCoOQMvgPxaWB08qNc
+
+
+select * from "Users";
+select * from departamento;
+
+INSERT INTO public.departamento("Id", "Codigo", "Descricao")
+values
+	((select gen_random_uuid ()), '010','BEBIDAS'),
+	((select gen_random_uuid ()), '020','CONGELADOS'),
+	((select gen_random_uuid ()), '030','LATICINIOS'),
+	((select gen_random_uuid () ), '040','VEGETAIS');
+
