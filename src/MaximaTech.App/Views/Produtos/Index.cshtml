@@ -17,8 +17,6 @@
             <th>Status</th>
             <th>Departamento</th>
             <th>Ações</th>
-            <th></th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -32,19 +30,17 @@
                 <td>@produto.Departamento?.Descricao</td>
 
                 <td>
-                    <form asp-action="Details" asp-route-id="@produto.Id" method="get">
-                        <button type="submit" class="btn btn-secondary">Detalhes</button>
-                    </form>
-                </td>
-                <td>
-                    <form asp-action="Editar"  asp-route-id="@produto.Id" method="post">
-                        <button type="submit" class="btn btn-warning">Editar</button>
-                    </form>
-                </td>
-                <td>
-                    <form asp-action="Deletar" asp-route-id="@produto.Id" method="post">
-                        <button type="submit" class="btn btn-danger">Deletar</button>
-                    </form>
+                    <div class="btn-group" role="group" aria-label="Ações">
+                        <form asp-action="Details" asp-route-id="@produto.Id" method="get">
+                            <button type="submit" class="btn btn-secondary">Detalhes</button>
+                        </form>
+                        <form asp-action="Editar" asp-route-id="@produto.Id" method="post">
+                            <button type="submit" class="btn btn-warning">Editar</button>
+                        </form>
+                        <form asp-action="Deletar" asp-route-id="@produto.Id" method="post">
+                            <button type="submit" class="btn btn-danger">Deletar</button>
+                        </form>
+                    </div>
                 </td>
             </tr>
         }
