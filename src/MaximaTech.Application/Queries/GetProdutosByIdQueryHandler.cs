@@ -14,7 +14,7 @@ namespace MaximaTech.Application.Queries
         }
         public async Task<Produtos> Handle(GetProdutosByIdQuery request, CancellationToken cancellationToken)
         {
-            var Produto = await _uow.ProdutoRepository.GetById(request.Id);
+            var Produto = await _uow.ProdutoRepository.GetByIdAsync(request.Id);
 
             return Produto;
         }

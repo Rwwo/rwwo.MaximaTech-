@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using MaximaTech.Application.Queries;
 using MediatR;
 using MaximaTech.Application.Command;
+using Microsoft.AspNetCore.Http;
 
 namespace MaximaTech.api.Controllers
 {
@@ -69,6 +70,25 @@ namespace MaximaTech.api.Controllers
             var result = await _mediator.Send(prod);
 
             return Ok(result);
+        }
+
+        [HttpPut]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> Put(EditarProdutoCommand command)
+        {
+            await _mediator.Send(command);
+            return NoContent();
+        }
+
+        [HttpDelete]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesDefaultResponseType]
+        public async Task<IActionResult> Delete(Guid Id)
+        {
+            var command = new DeletarProdutoCommand(Id);
+            await _mediator.Send(command);
+            return NoContent();
         }
     }
 }

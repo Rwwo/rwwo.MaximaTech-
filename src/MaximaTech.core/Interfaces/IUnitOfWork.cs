@@ -4,6 +4,6 @@
     {
         IProdutoRepository ProdutoRepository { get; }
         IDepartamentoRepository DepartamentoRepository { get; }
-        int Save();
+        Task Save();
     }
 }

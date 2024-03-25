@@ -13,17 +13,17 @@ namespace MaximaTech.Infrastructure.Repositories
         {
             _dbContext = dbContext;
         }
-        public async Task Add(Produtos produto)
+        public async Task AddAsync(Produtos produto)
         {
             await _dbContext.Produtos.AddAsync(produto);
         }
 
-        public async Task<IEnumerable<Produtos>> GetAll()
+        public async Task<IEnumerable<Produtos>> GetAllAsync()
         {
             return await _dbContext.Produtos.Include(p => p.Departamento).ToListAsync();
         }
 
-        public async Task<Produtos> GetById(Guid Id)
+        public async Task<Produtos> GetByIdAsync(Guid Id)
         {
             return await _dbContext.Produtos.Include(p => p.Departamento).FirstOrDefaultAsync(t => t.Id == Id);
         }

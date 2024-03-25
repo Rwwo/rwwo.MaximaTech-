@@ -36,7 +36,7 @@ namespace MaximaTech.Api.Tests.Application.Commands
 
             Assert.IsNotNull(produtoCriado);
 
-            produtoRepository.Verify(pr => pr.Add(It.IsAny<Produtos>()), Times.Once);
+            produtoRepository.Verify(pr => pr.AddAsync(It.IsAny<Produtos>()), Times.Once);
 
         }
     }

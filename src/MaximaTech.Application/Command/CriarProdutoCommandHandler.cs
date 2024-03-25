@@ -15,7 +15,7 @@ namespace MaximaTech.Application.Command
         }
         public async Task<Produtos> Handle(CriarProdutoCommand request, CancellationToken cancellationToken)
         {
-            await _uow.ProdutoRepository.Add(request.Produtos);
+            await _uow.ProdutoRepository.AddAsync(request.Produtos);
             _uow.Save();
             return request.Produtos;
         }

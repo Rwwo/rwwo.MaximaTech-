@@ -26,9 +26,9 @@ namespace MaximaTech.api.Data
             get => _DepartamentoRepository ?? (_DepartamentoRepository = new DepartamentoRepository(_dbContext));
         }
 
-        public int Save()
+        public async Task Save()
         {
-            return _dbContext.SaveChanges();
+            await _dbContext.SaveChangesAsync();
         }
 
         public void Dispose()

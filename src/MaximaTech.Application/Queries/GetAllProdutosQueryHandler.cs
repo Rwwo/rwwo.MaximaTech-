@@ -14,7 +14,7 @@ namespace MaximaTech.Application.Queries
         }
         public async Task<List<Produtos>> Handle(GetAllProdutosQuery request, CancellationToken cancellationToken)
         {
-            var departamentos = await _uow.ProdutoRepository.GetAll();
+            var departamentos = await _uow.ProdutoRepository.GetAllAsync();
 
             return departamentos.ToList();
         }

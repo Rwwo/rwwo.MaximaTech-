@@ -4,9 +4,8 @@ namespace MaximaTech.core.Interfaces
 {
     public interface IProdutoRepository
     {
-        Task<IEnumerable<Produtos>> GetAll();
-        
-        Task<Produtos> GetById(Guid Id);
-        Task Add(Produtos produto);
+        Task<IEnumerable<Produtos>> GetAllAsync();
+        Task<Produtos> GetByIdAsync(Guid Id);
+        Task AddAsync(Produtos produto);
     }
 }
