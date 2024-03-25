@@ -20,12 +20,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="NUnit.Framework" />
+    <ProjectReference Include="..\MaximaTech.api\MaximaTech.api.csproj" />
+    <ProjectReference Include="..\MaximaTech.Application\MaximaTech.Application.csproj" />
+    <ProjectReference Include="..\MaximaTech.core\MaximaTech.core.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\MaximaTech.Application\MaximaTech.Application.csproj" />
-    <ProjectReference Include="..\src\MaximaTech.core\MaximaTech.core.csproj" />
+    <Using Include="NUnit.Framework" />
   </ItemGroup>
+
 
 </Project>
