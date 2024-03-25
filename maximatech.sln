@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaximaTech.Infrastructure",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MaximaTech.Application", "src\MaximaTech.Application\MaximaTech.Application.csproj", "{7A9CC137-3427-4F93-8C42-E901D0F7464E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaximaTech.Api.Tests", "MaximaTech.Api.Tests\MaximaTech.Api.Tests.csproj", "{0081AAA1-18F9-454A-85B7-B506AA8794D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{7A9CC137-3427-4F93-8C42-E901D0F7464E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7A9CC137-3427-4F93-8C42-E901D0F7464E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7A9CC137-3427-4F93-8C42-E901D0F7464E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0081AAA1-18F9-454A-85B7-B506AA8794D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0081AAA1-18F9-454A-85B7-B506AA8794D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0081AAA1-18F9-454A-85B7-B506AA8794D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0081AAA1-18F9-454A-85B7-B506AA8794D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
