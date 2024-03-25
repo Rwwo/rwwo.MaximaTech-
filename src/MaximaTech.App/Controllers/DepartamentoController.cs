@@ -4,52 +4,34 @@ using MaximaTech.api.Models;
 using MaximaTech.App.Models;
 using MaximaTech.App.Services;
 
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
-using NuGet.Common;
 
 namespace MaximaTech.App.Controllers
 {
     public class DepartamentoController : Controller
     {
-        string token = "";
         public IActionResult Index()
         {
-            if (PersistirToken())
-            {
-                var services = new MaximaTechApiServices(token);
+            string token = ObterToken();
+            if (token == null)
+                return View("Error", new ErroGenericoViewModel { Mensagem = "Token expirado ou inválido" });
 
-                var ret = services.ConsultarDepartamentos();
+            var _apiServices = new MaximaTechApiServices(token);
 
-                if (ret.Success)
-                {
-                    List<Departamentos> dps = services.ConsultarDepartamentos().Result;
+            var ret = _apiServices.ConsultarDepartamentos();
+            if (ret.Success)
+                return View(ret.Result);
 
-                    return View(dps);
-                }
-                else
-                {
-                    return View("Error", ret.Message);
-                }
-            }
-            else
-            {
-                return View("Error", new ErroGenericoViewModel() { Mensagem = "Token expirado"});
-            }
+            return View("Error", ret.Message);
+
         }
 
-        private bool PersistirToken()
+        private string ObterToken()
         {
             if (User.Identity.IsAuthenticated)
-            {
-                token = User.FindFirstValue("token").RemoveQuotes();
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+                return User.FindFirstValue("Token")?.RemoveQuotes();
+
+            return null;
         }
     }
 }

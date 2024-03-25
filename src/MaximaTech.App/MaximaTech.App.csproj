@@ -14,6 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\MaximaTech.Application\MaximaTech.Application.csproj" />
     <ProjectReference Include="..\MaximaTech.core\MaximaTech.core.csproj" />
   </ItemGroup>
 

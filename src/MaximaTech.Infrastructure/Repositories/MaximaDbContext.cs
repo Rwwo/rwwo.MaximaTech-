@@ -1,4 +1,6 @@
-﻿using MaximaTech.api.Models;
+﻿using System.Reflection.Emit;
+
+using MaximaTech.api.Models;
 
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -31,9 +33,11 @@ namespace MaximaTech.api.Data
 
             builder.Entity<Produtos>()
                 .HasOne(p => p.Departamento)
-                //.WithMany(p => p.Produtos)
-                //.HasForeignKey(t => t.DepartamentoId)
+            //.WithMany(p => p.Produtos)
+            //.HasForeignKey(t => t.DepartamentoId)
                 ;
+
+            builder.Entity<Produtos>().HasQueryFilter(p => p.Status);
 
             //builder.Entity<Departamentos>()
             //    .HasMany(p => p.Produtos)

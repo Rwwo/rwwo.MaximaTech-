@@ -81,7 +81,7 @@ namespace MaximaTech.api.Controllers
             return NoContent();
         }
 
-        [HttpDelete]
+        [HttpDelete("{id:Guid}/Deletar")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesDefaultResponseType]
         public async Task<IActionResult> Delete(Guid Id)

@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Authentication.Cookies;
+﻿using MediatR;
+
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Hosting.Server;
+
+using RestSharp;
 
 namespace MaximaTech.App
 {
@@ -15,12 +20,13 @@ namespace MaximaTech.App
                     options.Cookie.HttpOnly = true;
                     options.Cookie.SecurePolicy = CookieSecurePolicy.Always; // Ativar HTTPS para cookies
                     options.Cookie.SameSite = SameSiteMode.Strict;
+                    options.ExpireTimeSpan = TimeSpan.FromMinutes(5);
                 });
 
             // Configurações de sessão
             services.AddSession(options =>
             {
-                options.IdleTimeout = TimeSpan.FromMinutes(60); // Defina o tempo limite da sessão, se necessário
+                options.IdleTimeout = TimeSpan.FromMinutes(5); // Defina o tempo limite da sessão, se necessário
                 options.Cookie.HttpOnly = true;
                 options.Cookie.IsEssential = true;
                 options.Cookie.SameSite = SameSiteMode.Strict;
@@ -28,6 +34,5 @@ namespace MaximaTech.App
 
             // Outras configurações e serviços
         }
-
     }
 }
