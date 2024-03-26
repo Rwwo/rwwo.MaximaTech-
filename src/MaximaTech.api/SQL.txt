@@ -10,9 +10,6 @@ Dados do Usuário
   "password": "ab123456789AB*"
 }
 
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6InJAci5jb20iLCJuYmYiOjE3MTEyOTAxODcsImV4cCI6MTcxMTMzMzM4NywiaWF0IjoxNzExMjkwMTg3LCJpc3MiOiJNZXVTaXN0ZW1hIiwiYXVkIjoiaHR0cHM6Ly9sb2NhbGhvc3QifQ.udmz42DkDcOdexHb6Gunoaj2qpCoOQMvgPxaWB08qNc
-
-
 select * from "Users";
 select * from departamento;
 
